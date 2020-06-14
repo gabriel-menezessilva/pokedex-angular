@@ -1,8 +1,14 @@
+import { PokeInfoComponent } from './pages/poke-info/poke-info.component';
+import { PokeListComponent } from './pages/poke-list/poke-list.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: 'pokemons', component: PokeListComponent },
+  { path: 'pokemons:id', component: PokeInfoComponent },
+  { path: '', redirectTo: '/pokemons', pathMatch: 'full' }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

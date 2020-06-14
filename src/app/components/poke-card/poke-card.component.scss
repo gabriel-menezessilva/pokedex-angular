@@ -1,0 +1,49 @@
+.card-container {
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    min-height: 100%;
+    position: relative;
+    top: 0;
+    transition: all .1s ease-in;
+}
+
+.card-container:hover {
+    top: -2px;
+    box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+}
+
+.card-container .card {
+    display: flex;
+    flex-direction: column;
+    color: #444;
+    text-decoration: none;
+}
+
+.card .card-text {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px 20px 20px;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.card-text .pokemon-name {
+    font-size: 20px;
+    margin: 0;
+    color: #333;
+}
+
+.card-text .pokemon-type {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    margin: 2em 0 0 0;
+    color: #999;
+}
+
+.card .image img {
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+
+}
