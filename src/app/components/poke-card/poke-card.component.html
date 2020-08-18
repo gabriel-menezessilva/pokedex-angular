@@ -1,13 +1,13 @@
-<div class="card-container">
+<div class="card-container" *ngFor="let pokemon of pokemons">
 	<a href="" class="card">
-		<!-- <div class="image" style="background-image: url();"></div> -->
-
 		<div class="image">
-			<img src="../../../assets/pokemon/1.png" alt="pokemon">
+			<img [src]="pokemon.sprite" alt="pokemon">
 		</div>
 		<div class="card-text">
-			<span class="pokemon-name">Bulbassauro</span>
-			<span class="pokemon-type">Type</span>
+			<span class="pokemon-name">{{ pokemon.name | uppercase }}</span>
+			<span class="pokemon-type">Type: 
+				<span *ngFor="let types of pokemon.types">{{ types.type.name | uppercase }} </span>
+			</span>
 		</div>
 		
 	</a>

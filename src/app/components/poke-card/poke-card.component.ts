@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'poke-card',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./poke-card.component.scss']
 })
 export class PokeCardComponent implements OnInit {
+
+  @Input() pokemons;
 
   constructor() { }
 
