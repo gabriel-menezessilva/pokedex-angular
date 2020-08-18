@@ -1,4 +1,6 @@
+import { PokemonDataService } from './../../services/pokemon-data.service';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'poke-list',
@@ -7,11 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokeListComponent implements OnInit {
 
-  pokemons = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+  pokemons = [];
+  offset: number = 0;
 
-  constructor() { }
+  constructor(private pokemonService: PokemonDataService) { }
 
   ngOnInit(): void {
+    this.pokemonService.getPokemons(this.offset).subscribe(res => {
+      this.pokemons = [...this.pokemons, res];
+    });
   }
 
 }

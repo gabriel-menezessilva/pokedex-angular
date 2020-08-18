@@ -1,3 +1,4 @@
+import { PokemonDataService } from './../services/pokemon-data.service';
 import { ComponentsModule } from './../components/components.module';
 import { PokeInfoComponent } from './poke-info/poke-info.component';
 import { PokeListComponent } from './poke-list/poke-list.component';
@@ -14,6 +15,9 @@ import { CommonModule } from '@angular/common';
   imports: [
     CommonModule,
     ComponentsModule
+  ],
+  providers: [
+    PokemonDataService
   ]
 })
 export class PagesModule { }
