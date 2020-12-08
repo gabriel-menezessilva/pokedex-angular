@@ -16,6 +16,21 @@ export class PokeListComponent implements OnInit {
   constructor(private pokemonService: PokemonDataService) { }
 
   ngOnInit(): void {
+   
+    this.pokemonService.getLocalStorageData('pokemons') ?
+      this.pokemons = [...JSON.parse(this.pokemonService.getLocalStorageData('pokemons'))] : this.getPokemons();
+
+  }
+
+  getPokeInfo(pokemon: Pokemon, index: number) {
+    this.pokemonService.queryPokemons(index).subscribe(res => {
+      pokemon.types = res.types;
+      pokemon.abilities = res.abilities;
+      this.pokemonService.setLocalStorageData('pokemons', JSON.stringify(this.pokemons));
+    });
+  }
+
+  getPokemons() {
     this.pokemonService.getPokemons(this.offset).subscribe((res) => {
       this.pokemons = [...this.pokemons, ...res];
       this.pokemons.forEach((poke, i) => {
@@ -23,15 +38,18 @@ export class PokeListComponent implements OnInit {
         poke.sprite = `../../../assets/pokemon/${index}.png`;
         this.getPokeInfo(poke, index);
       });
-      this.offset += 25;
     });
   }
 
-  getPokeInfo(pokemon: Pokemon, index: number) {
-    this.pokemonService.queryPokemons(index).subscribe(res => {
-      pokemon.types = res.types;
-      pokemon.abilities = res.abilities;
-    })
+  nextPage() {
+    this.offset += 25;
+    this.getPokemons();
+
+  }
+
+  previousPage() {
+    this.offset -= 25;
+    this.getPokemons();
   }
 
 }

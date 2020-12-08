@@ -19,7 +19,7 @@ export class PokemonDataService {
     );
   }
 
-  queryPokemons(id) {
+  queryPokemons(id: number) {
     return this.http.get(`${this.url}/pokemon/${id}`).pipe(
       map((response: any) => {
         return response;
@@ -27,5 +27,12 @@ export class PokemonDataService {
     );
   }
 
+  getLocalStorageData(key: string): any {
+    return localStorage.getItem(key);
+  }
+
+  setLocalStorageData(key: string, data: any): void {
+    localStorage.setItem(key, data);
+  }
 
 }
