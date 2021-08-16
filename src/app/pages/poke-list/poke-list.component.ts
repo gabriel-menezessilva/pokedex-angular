@@ -19,6 +19,9 @@ export class PokeListComponent implements OnInit {
    
     this.pokemonService.getLocalStorageData('pokemons') ?
       this.pokemons = [...JSON.parse(this.pokemonService.getLocalStorageData('pokemons'))] : this.getPokemons();
+    
+    console.log('pokemons', this.pokemons)
+
 
   }
 

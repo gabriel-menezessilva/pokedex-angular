@@ -1,2 +1,3 @@
-<poke-header></poke-header>
-<poke-card class="content" [pokemons]="pokemons"></poke-card>
+<section class="content">
+    <poke-card [routerLink]="['/pokemons', poke.name]" *ngFor="let poke of pokemons"  [pokemon]="poke"></poke-card>
+</section>

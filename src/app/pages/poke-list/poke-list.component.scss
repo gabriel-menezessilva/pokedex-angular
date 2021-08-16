@@ -1,5 +1,4 @@
 .content {
-    width: 90%;
     max-width: 1240px;
     margin: 0 auto;
 
@@ -8,4 +7,8 @@
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: auto;
     grid-gap: 20px;
+}
+
+.content poke-card {
+    cursor: pointer;
 }

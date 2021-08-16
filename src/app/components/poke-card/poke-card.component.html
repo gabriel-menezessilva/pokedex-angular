@@ -1,5 +1,5 @@
-<div class="card-container" *ngFor="let pokemon of pokemons">
-	<a href="" class="card">
+<div class="card-container">
+	<div class="card">
 		<div class="image">
 			<img [src]="pokemon.sprite" alt="pokemon">
 		</div>
@@ -9,6 +9,5 @@
 				<span *ngFor="let types of pokemon.types">{{ types.type.name | uppercase }} </span>
 			</span>
 		</div>
-		
-	</a>
+	</div>
 </div>

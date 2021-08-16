@@ -2,6 +2,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+$bg-primary: #e8e8e8;
+$bg-secondary: #d64541;
+
 * {
     padding: 0;
     margin: 0;
@@ -14,7 +17,15 @@ html, body, #root {
 }
 
 body {
-    background: #fbf5bc;
+    background: $bg-primary;
     font-family: 'Roboto', sans-serif;
     -webkit-font-smoothing: antialiased;
+}
+
+.bg-primary {
+    background: $bg-primary;
+}
+
+.bg-secondary {
+    background: $bg-secondary;
 }
