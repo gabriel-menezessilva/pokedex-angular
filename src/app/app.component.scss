@@ -1,5 +1,5 @@
 .wrapper {
-
+  height: 100%;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;
@@ -7,17 +7,17 @@
     "header"
     "main"
     "footer";
-}
 
-.wrapper > poke-header {
-  grid-area: header;
-}
+  > poke-header {
+    grid-area: header;
+  }
 
-.wrapper > .main {
-  grid-area: main;
-  padding: 15px 5px 10px 5px;
-}
+  > .main {
+    grid-area: main;
+    padding: 15px 5px 10px 5px;
+  }
 
-.wrapper > app-footer {
-  grid-area: footer;
+  > poke-footer {
+    grid-area: footer;
+  }
 }
