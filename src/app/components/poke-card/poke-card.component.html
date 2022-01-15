@@ -5,7 +5,7 @@
 		</div>
 		<div class="card-text">
 			<span class="pokemon-name">{{ pokemon.name | uppercase }}</span>
-			<span class="pokemon-type">Type: 
+			<span class="pokemon-type">Type:
 				<span *ngFor="let types of pokemon.types">{{ types.type.name | uppercase }} </span>
 			</span>
 		</div>
